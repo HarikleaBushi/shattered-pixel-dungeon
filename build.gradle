@@ -7,6 +7,19 @@ buildscript {
         classpath 'com.android.tools.build:gradle:7.0.0'
         classpath 'com.mobidevelop.robovm:robovm-gradle-plugin:2.3.13'
     }
+    
+}
+
+plugins {
+  id "org.sonarqube" version "3.3"
+}
+
+sonarqube {
+  properties {
+    property "sonar.projectKey", "HarikleaBushi_shattered-pixel-dungeon"
+    property "sonar.organization", "harikleabushi"
+    property "sonar.host.url", "https://sonarcloud.io"
+  }
 }
 
 allprojects {
@@ -34,5 +47,6 @@ allprojects {
         mavenCentral()
         maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
     }
+    
 
 }
